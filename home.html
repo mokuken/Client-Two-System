@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            height: 10vh;            
+        }
+
+        .nav-top {
+            background-color: #E1EFD8;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .nav-top img {
+            height: 100%;
+        }
+
+        .nav-top .nav-search {
+            width: 40%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        .nav-bottom {
+            background-color: #67A93B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .nav-bottom a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        .nav-top, .nav-bottom {
+            height: 100%;
+        }
+
+        
+        .nav-pages a {
+            background-color: #64A03B;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+        }
+
+        .main {
+            height: 90vh;
+            background-image: url('assets/images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .main h1 {
+            font-size: 3em;
+        }
+
+        .main a {
+            background-color: #64A03B;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 20px;
+            font-size: 1em;
+            margin-top: 20px;
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-top">
+            <img src="assets/images/logo.png"/>
+            <input type="text" class="nav-search" placeholder=" 🔍 Search for products, shops, tips...">
+            <div class="nav-pages">
+                <a style="background-color: #129921;" href="cart.html">🛒</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <a>HOME</a>
+            <a>SHOPS</a>
+            <a>TIPS</a>
+            <a>CONTACTS</a>
+            <a>HELP</a>
+        </div>
+    </div>
+    <div class="main">
+        <h1>LET'S SHOP TO FARMHUB</h1>
+        <h2>Support Our Local Farmers</h2>
+        <a href="learn-more.html">Learn More</a>
+    </div>
+</body>
+</html>
