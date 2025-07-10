@@ -85,6 +85,7 @@
             background-position: center;
             display: flex;
             flex-direction: column;
+            justify-content: space-evenly;
             align-items: center;
             color: white;
             padding-top: 120px;
@@ -97,6 +98,9 @@
         .category-container {
             width: 90%;
             margin-top: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
         }
 
         .categories {
@@ -108,7 +112,7 @@
         .categories .category {
             background-color: white;
             color: black;
-            width: 100%;
+            width: 250px;
             height: 250px;
             margin: 10px;
             padding: 10px;
@@ -147,10 +151,14 @@
         </div>
     </div>
     <div class="main">
-        <h1>LET'S SHOP TO FARMHUB</h1>
-        <h2>Support Our Local Farmers</h2>
+        <div style="text-align: center;">
+            <h1>LET'S SHOP TO FARMHUB</h1>
+            <h2>Support Our Local Farmers</h2>
+        </div>
         <div class="category-container">
-            <h2>Explore Categories</h2>
+            <div style="width: 1080px;">
+                <h2>Explore Categories</h2>
+            </div>
             <div class="categories">
                 <div class="category">
                     <div class="category-image" style="background-image: url('assets/images/crops.jpg'); background-size: cover; background-position: center;"></div>
