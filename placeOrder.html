@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            color: #333;
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            height: 15vh;            
+            overflow: hidden;
+        }
+
+        .nav-top {
+            background-color: #E1EFD8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 105px;
+            height: 60%;
+            min-height: 0;
+        }
+
+        .nav-top img {
+            height: 100%;
+        }
+
+        .nav-pages a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+            margin: 5px;
+        }
+
+        .nav-bottom {
+            background-color: #67A93B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            height: 40%;
+            min-height: 0;
+        }
+
+        .nav-bottom a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
+
+        .nav-bottom a.active {
+            background-color: #558336;
+            color: #B5B5B4;
+            border-radius: 25px;
+        }
+
+        .main {
+            flex: 1 1 auto;
+            min-height: 0;
+            background-color: #E2F0D9;
+            padding: 25px 50px;
+            overflow-y: auto;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-top">
+            <img src="assets/images/logo.png"/>
+            <div class="nav-pages">
+                <a style="background-color: transparent;" href="notification.html">🔔</a>
+                <a style="background-color: #129921;" href="cart.html">🛒</a>
+                <a style="background-color: #FFF;" href="profile.html">👤</a>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <a>HOME</a>
+            <a>SHOPS</a>
+            <a>TIPS</a>
+            <a>CONTACTS</a>
+            <a>HELP</a>
+        </div>
+    </div>
+    <div class="main" style="display: flex;">
+       <div style="width: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+            <div style="padding: 20px;width: 100%;height: 50%;background-color: white;margin-bottom: 10px;display: flex;flex-direction: column;justify-content: space-between;">
+                <h2>Shipping Address</h2>
+                <div style="height: 40%;display: flex;flex-direction: column;justify-content: space-between;">
+                    <div style="display: flex;align-items: center;justify-content: space-between;">
+                        <p>Juan Delacruz | 1234567890</p>
+                        <a style="color: #129921;">Change</a>
+                    </div>
+                    <p>Tabing Ilog Blue ang Bahay</p>
+                    <p>Agbucayo, Burias, Mambusao, Capiz</p>
+                </div>
+            </div>
+            <div style="padding: 20px;width: 100%;height: 100%;background-color: white;display: flex;flex-direction: column;justify-content: space-between;">
+                <h2>Payment Method</h2>
+                <div style="display: flex;align-items: center;justify-content: space-evenly;">
+                    <button style="background-color: #67A93A;padding: 20px 0;width: 250px;font-size: 1.5rem;border-radius: 15px;color: white;border: none;">Cash on Delivery</button>
+                    <button style="background-color: #67A93A;padding: 20px 0;width: 250px;font-size: 1.5rem;border-radius: 15px;color: white;border: none;">GCash</button>
+                </div>
+                <p><a style="text-decoration: none;color: #129921;">FARM HUB</a> Shop safe, pay safe.</p>
+            </div>
+       </div>
+       <div style="width: 100%;background-color: white;margin-left: 10px;padding: 20px;display: flex;flex-direction: column;justify-content: space-between;">
+        <h2>Your Order</h2>
+        <div style="width:100%;background-color: #E7E6E6;height: 40%;padding: 10px;border-radius: 15px;">
+            <table style="width:100%; border-collapse: collapse;">
+                <thead style="background-color: #70AD47;">
+                    <tr>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Product Name</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Quantity</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Price</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px;">Organic Apples</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">2</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">00.00</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">00.00</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px;">Fresh Milk</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">1</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">00.00</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">00.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="display: flex;align-items: center;justify-content: space-between;">
+            <p>Shipping Options</p>
+            <div style="width: 200px;display: flex;align-items: center;justify-content: space-between;">
+                <label>
+                    <input type="radio" name="shippingOption" value="delivery">
+                    Delivery
+                </label>
+                <label>
+                    <input type="radio" name="shippingOption" value="pickup">
+                    Pick-up
+                </label>
+            </div>
+        </div>
+        <div style="display: flex;align-items: center;justify-content: space-between;">
+            <h3>Shipping Cost</h3>
+            <h3>00.00</h3>
+        </div>
+        <div style="display: flex;align-items: center;justify-content: space-between;">
+            <h3>Total</h3>
+            <h3>00.00</h3>
+        </div>
+        <button style="background-color: #70AD47; color: white; border: none; padding: 15px 0; border-radius: 5px; cursor: pointer; font-size: 16px;">Place Order</button>
+       </div>
+    </div>
+</body>
+</html>

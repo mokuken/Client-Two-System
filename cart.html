@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            height: 15vh;            
+            /* Ensure children fit inside */
+            overflow: hidden;
+        }
+
+        .nav-top {
+            background-color: #E1EFD8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 105px;
+            /* Take half of navbar height */
+            height: 60%;
+            min-height: 0;
+        }
+
+        .nav-top img {
+            height: 100%;
+        }
+
+        .nav-top .nav-search {
+            width: 40%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        .nav-bottom {
+            background-color: #67A93B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            /* Take half of navbar height */
+            height: 40%;
+            min-height: 0;
+        }
+
+        .nav-bottom a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
+
+        .nav-bottom a.active {
+            background-color: #558336;
+            color: #B5B5B4;
+            border-radius: 25px;
+        }
+
+        
+        .nav-pages a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.5);
+            margin: 5px;
+        }
+
+        .main {
+            height: 65vh;
+            background-color: #E2F0D9;
+            padding: 50px 100px;
+            overflow-y: auto;
+        }
+
+        .main h1 {
+            font-size: 3em;
+        }
+
+        .product-desc {
+            width: 100%;
+            height: 90%;
+            margin: 0 10px;
+            background-color: white;
+            padding: 20px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-images {
+            width: 100%;
+            height: 90%;
+            margin: 0 10px;
+            background-color: white;
+            padding: 20px;
+            color: black;
+        }
+
+        .product-desc .product-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .product-buttons button {
+            background-color: #548235;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            padding: 15px 30px;
+            border-radius: 20px;
+        }
+
+        .product-images img {
+            width: 100%;
+        }
+
+        .delivery-details {
+            color: black;
+            width: 100%;
+            height: 90%;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .seller-information {
+            width: 100%;
+            height: 50%;
+            padding: 10px;
+            background-color: #F8F8F8;
+        }
+
+        .delivery-address {
+            width: 100%;
+            height: 50%;
+            padding: 10px;
+            background-color: #F8F8F8;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+
+        .footer {
+            height: 20vh;
+            background-color: #6DB040;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer img {
+            height: 100%;
+        }
+
+        .footer .footer-navigation {
+            display: flex;
+            margin-right: 50px;
+        }
+
+        .footer-navigation a {
+            font-size: 1.5rem;
+            padding: 0 30px;
+            color: white;
+        }
+
+        .category-container {
+            width: 90%;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .categories {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .categories .category {
+            background-color: white;
+            color: black;
+            width: 250px;
+            height: 250px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category-image {
+            width: 100%;
+            height: 100%;
+            background-color: #E1EFD8;
+            border-radius: 15px;
+            margin-bottom: 5px;
+        }
+
+        .shop-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .shop-rating p:first-child {
+            color: #FFD700; /* Yellow color for stars */
+        }
+
+        .spinner {
+            display: inline-flex;
+            border: 1px solid #000;
+            border-radius: 4px;
+            overflow: hidden;
+            font-family: sans-serif;
+            height: 24px;
+        }
+
+        .spinner button {
+            width: 24px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .spinner input {
+            width: 30px;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .spinner button:active {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-top">
+            <img src="assets/images/logo.png"/>
+            <div class="nav-pages">
+                <a style="background-color: transparent;" href="notification.html">🔔</a>
+                <a style="background-color: #129921;" href="cart.html">🛒</a>
+                <a style="background-color: #FFF;" href="profile.html">👤</a>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <a class="active">HOME</a>
+            <a>SHOPS</a>
+            <a>TIPS</a>
+            <a>CONTACTS</a>
+            <a>HELP</a>
+        </div>
+    </div>
+    <div class="main">
+        <h1>Cart</h1>
+        <div class="products-om-cart" style="display: flex;flex-direction: column;align-items: center;justify-content: center;background:white; color:black; border-radius:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1); overflow:hidden;padding: 10px;">
+            <table style="width:100%;">
+                <thead style="background:#E1EFD8;">
+                    <tr>
+                        <th style="padding:15px; text-align:left;">Product</th>
+                        <th style="padding:15px; text-align:center;">Quantity</th>
+                        <th style="padding:15px; text-align:right;">Total Price</th>
+                        <th style="padding:15px; text-align:center;">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #E7E6E6;">
+                        <td style="padding:15px;display: flex;align-items: center;">
+                            <img src="assets/images/product-images/eggplant.jpg" alt="Eggplant" style="width:50px; height:50px; border-radius:8px; margin-right:10px;">
+                            <div>
+                                <p>Eggplant</p>
+                                <p style="color: rgb(112, 112, 112);">Others</p>
+                            </div>
+                        </td>
+                        <td style="padding:15px; text-align:center;">
+                            <div class="spinner">
+                                <button>-</button>
+                                <input type="text" value="1" readonly>
+                                <button>+</button>
+                            </div>
+                        </td>
+                        <td style="padding:15px; text-align:right;">00.00/pcs</td>
+                        <td style="padding:15px; text-align:center;">
+                            <button style="background:#e74c3c; color:white; border:none; border-radius:8px; padding:6px 12px; cursor:pointer;">Remove</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+            <br>
+            <h2>Total: 00.00</h2>
+        </div>
+        <div style="margin: 20px 0;width: 100%;display: flex;align-items: center;justify-content: center;">
+            <button style="font-size: 1rem;padding: 10px 50px;border: none;background-color: #548235;color: white;border-radius: 20px;">Checkout</button>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="assets/images/logo.png"/>
+        <div class="footer-navigation">
+            <a>HOME</a>
+            <a>CONTACT US</a>
+            <a>ABOUT</a>
+            <a>TERMS AND CONDITION</a>
+        </div>
+    </div>
+</body>
+</html>
